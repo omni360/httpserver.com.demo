@@ -67,20 +67,20 @@ public class Serverb {
 					"		<meta http-equiv=\"Content-Type\" content=\"text/html;charset=utf-8\">" +CRLF+
 					"	</head>" +CRLF+
 					"	<body>" +CRLF+
-					"	<pre>" +CRLF+
-					"		method:请求方式get/post" +CRLF+
-					"		get:数据量小,安全性不高 默认方式" +CRLF+
-					"		post:量大,安全性高." +CRLF+
-					"		action:请求服务器路径." +CRLF+
-					"		id:编号,前端(用户浏览器)区分唯一性" +CRLF+
-					"		name:名称,后端(服务器端)区分唯一性,获取值" +CRLF+
-					"		只要提交数据给后台,必须存在neme" +CRLF+
-					"	</pre>" +CRLF+
-					"	<form action=\"http://localhost:8888/index.html\" method=\"post\" accept-charset=\"utf-8\">" +CRLF+
-					"	用户名:<input type=\"text\" name=\"name\" id=\"name\"/>" +CRLF+
-					"	密码:<input type=\"password\" name=\"pwd\" id=\"pwd\"/>" +CRLF+
-					"	<input type=\"submit\" value=\"登陆\"/>" +CRLF+
-					"	</form>	" +CRLF+
+					"		<pre>" +CRLF+
+					"			method:请求方式get/post" +CRLF+
+					"			get:数据量小,安全性不高 默认方式" +CRLF+
+					"			post:量大,安全性高." +CRLF+
+					"			action:请求服务器路径." +CRLF+
+					"			id:编号,前端(用户浏览器)区分唯一性" +CRLF+
+					"			name:名称,后端(服务器端)区分唯一性,获取值" +CRLF+
+					"			只要提交数据给后台,必须存在neme" +CRLF+
+					"		</pre>" +CRLF+
+					"		<form action=\"http://localhost:8888/index.html\" method=\"post\" accept-charset=\"utf-8\">" +CRLF+
+					"			用户名:<input type=\"text\" name=\"name\" id=\"name\"/>" +CRLF+
+					"			密码:<input type=\"password\" name=\"pwd\" id=\"pwd\"/>" +CRLF+
+					"			<input type=\"submit\" value=\"登陆\"/>" +CRLF+
+					"		</form>	" +CRLF+
 					"	</body>" +CRLF+
 					"</html>");
 			StringBuilder response = new StringBuilder();
