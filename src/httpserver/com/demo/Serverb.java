@@ -61,18 +61,32 @@ public class Serverb {
 			//响应
 			StringBuilder responseContext = new StringBuilder();
 			responseContext.append("<!doctype html>" +
-"<html>" +
-	"<head>" +
-		"<title>第一个表单</title>"+
-		"<meta http-equiv=\"Content-Type\" content=\"text/html;charset=utf-8\">"+
-	"</head>"+
-	"<body>"+
-		"<div><p>hello world</p></div>"+
-	"</body>"+
-"</html>");
+					"<html>" +
+					"	<head>" +
+					"		<title>第一个表单</title>" +
+					"		<meta http-equiv=\"Content-Type\" content=\"text/html;charset=utf-8\">" +
+					"	</head>" +
+					"	<body>" +
+					"	<pre>" +
+					"		method:请求方式get/post" +CRLF+
+					"		get:数据量小,安全性不高 默认方式" +CRLF+
+					"		post:量大,安全性高." +CRLF+
+					"		action:请求服务器路径." +CRLF+
+					"		id:编号,前端(用户浏览器)区分唯一性" +CRLF+
+					"		name:名称,后端(服务器端)区分唯一性,获取值" +CRLF+
+					"		只要提交数据给后台,必须存在neme" +CRLF+
+					"	</pre>" +
+					"	<form action=\"http://localhost:8888/index.html\" method=\"post\" accept-charset=\"utf-8\">" +
+					"	用户名:<input type=\"text\" name=\"name\" id=\"name\"/>" +
+					"	密码:<input type=\"password\" name=\"pwd\" id=\"pwd\"/>" +
+					"	<input type=\"submit\" value=\"登陆\"/>" +
+					"	</form>	" +
+					"	</body>" +
+					"</html>");
 			StringBuilder response = new StringBuilder();
 			response.append("HTTP/1.1").append(BLANK).append("200").append(BLANK).append("OK").append(CRLF);
 			response.append(new Date()).append(CRLF);
+			response.append("Content-Type:text/html;").append(BLANK).append("charset=GBK").append(CRLF);
 			response.append("Content-Length:").append(responseContext.toString().getBytes().length).append(CRLF);
 			response.append(CRLF);
 			response.append(responseContext);
