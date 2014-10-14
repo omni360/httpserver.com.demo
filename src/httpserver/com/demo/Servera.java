@@ -13,14 +13,14 @@ import java.net.Socket;
  * @author omni360
  *
  */
-public class Server {
+public class Servera {
 	
 	private ServerSocket server;
 	/**
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		Server server = new Server();
+		Servera server = new Servera();
 
 		
 		server.start();
@@ -42,18 +42,10 @@ public class Server {
 		try {
 			Socket client = server.accept();
 			StringBuilder sb = new StringBuilder();
-			String msg = null;
-			
-			BufferedReader br= new BufferedReader(new InputStreamReader(client.getInputStream()));
-			
-			while((msg=br.readLine()).length()>0){
-				sb.append(msg);
-				sb.append("\r\n");
-				if(msg== null){
-					break;
-				}
-			}
-			String requestInfo = sb.toString().trim();
+			byte[] data = new byte[20480];
+			int len = client.getInputStream().read(data);
+
+			String requestInfo = new String(data,0,len).trim();
 			System.out.println(requestInfo);
 			
 		} catch (IOException e) {
